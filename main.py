@@ -36,8 +36,10 @@ try:
   X = np.array([crashPoint(1), crashPoint(2), crashPoint(3), crashPoint(4), crashPoint(5), crashPoint(6), crashPoint(7), crashPoint(8), crashPoint(9), crashPoint(10), crashPoint(11), crashPoint(12), crashPoint(28),crashPoint(29),crashPoint(30) ]).reshape(-1,1)
   y = np.array([crashPoint(13), crashPoint(14), crashPoint(15), crashPoint(16), crashPoint(17), crashPoint(18), crashPoint(19), crashPoint(20), crashPoint(21), crashPoint(22), crashPoint(23), crashPoint(24), crashPoint(25), crashPoint(26),crashPoint(27)]).reshape(-1,1)
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+#creating a numpy array using the crashpoints then using X_train and the other testing trains
   model = LinearRegression()
   model.fit(X_train, y_train)
+#fitting the trains
   score = model.score(X_test, y_test)
   y_pred = model.predict(X_test)
   average = sum(y_pred) / len(y_pred)
